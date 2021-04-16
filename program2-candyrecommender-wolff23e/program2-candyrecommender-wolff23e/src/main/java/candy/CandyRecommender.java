@@ -179,7 +179,7 @@ public class CandyRecommender {
      */
     public static void main(String[] args) {
         try {
-            readCandyFile("Candy.txt");
+            readCandyFile("/Users/emmawolff/Documents/college/senior/software design and dev/homework2su/program2-candyrecommender-wolff23e/program2-candyrecommender-wolff23e/Candy.txt");
             getUserPreferences();
             Set<Candy> likedCandies = findLikedCandies();
             recommendCandies(likedCandies);

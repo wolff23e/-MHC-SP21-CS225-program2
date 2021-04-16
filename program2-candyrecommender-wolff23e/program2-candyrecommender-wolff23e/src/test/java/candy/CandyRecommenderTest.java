@@ -36,7 +36,7 @@ class CandyRecommenderTest {
          */
 
         try {
-        CandyRecommender.readCandyFile("Candy.txt");
+        CandyRecommender.readCandyFile("/Users/emmawolff/Documents/college/senior/software design and dev/homework2su/program2-candyrecommender-wolff23e/program2-candyrecommender-wolff23e/Candy.txt");
         }
         catch (FileNotFoundException e){
             assert(false);
