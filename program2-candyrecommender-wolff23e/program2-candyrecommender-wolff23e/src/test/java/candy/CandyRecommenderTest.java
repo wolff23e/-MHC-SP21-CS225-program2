@@ -146,6 +146,7 @@ class CandyRecommenderTest {
         CandyRecommender.setDislikes(dislikes1);
         Set<Candy> possible = new HashSet<Candy>();
         possible = CandyRecommender.findLikedCandies();
+        // currently working for 19,
         assertTrue(possible.size() == 16);
     }
 
@@ -160,10 +161,17 @@ class CandyRecommenderTest {
          * Parameters: none
          * Correct result: possible should contain 12 candies, 11 using default Candy.txt
          */
-        CandyRecommender.setLikes(likes3);
-        CandyRecommender.setDislikes(dislikes3);
         Set<Candy> possible = new HashSet<Candy>();
+        CandyRecommender.setLikes(likes2);
+        CandyRecommender.setDislikes(dislikes3);
+        System.out.println(likes2) ;  
+        //  
+        System.out.println( dislikes3) ;  
+      // possible is being wiped cleaned by remove all, even if not valid
+        // when possible calls findLikedCandies it is given broken return
         possible = CandyRecommender.findLikedCandies();
+        System.out.println(possible);
+        System.out.println(possible.size());
         assertTrue(possible.size() == 12);
     }
 

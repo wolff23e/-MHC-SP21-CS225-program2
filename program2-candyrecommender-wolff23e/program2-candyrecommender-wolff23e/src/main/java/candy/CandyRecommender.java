@@ -100,7 +100,13 @@ public class CandyRecommender {
                 Candy candy = new Candy( name, ingredients);
                 candies.add(candy);
                 // Add the information to the ingredient map.
+                //after one iteration, the ingredient map is corrupted as
+                //each node goes "INGREDIENT", with a key of the Ingredient
+                //an arrist list as a value, with the 0 place being
+                //two variables of candy being name and ingredients
                 for (String ingredient : ingredients) {
+                    //not right
+                    System.out.println(ingredient);
                     ingredientMap.add(ingredient, candy);
                 }
             }
@@ -150,10 +156,18 @@ public class CandyRecommender {
      */
     static Set<Candy> findLikedCandies() {
         Set<Candy> possible = new HashSet<>();
+        //even sorts some things without the right ingred. i.e. for fruit
+        // peanut m and m hershey reeces etc were added but are not
+        //fruit samd with coco not etc
+        // just not working corrrectly
         for (String ingredient : likes) {
+            //need to find ingredientMap asap this is the error
+            //need to access broken ingredientMap here
             possible.addAll(ingredientMap.getCandyWith(ingredient));
         }
         for (String ingredient : dislikes) {
+            // is removing all items immediately, not by ingredient
+            System.out.println(ingredientMap.getCandyWith(ingredient));
             possible.removeAll(ingredientMap.getCandyWith(ingredient));
         }
         return possible;

@@ -12,14 +12,14 @@ import java.util.Set;
 public class IngredientMap {
     // The map being managed.
     private Map<String, List<Candy>> ingredientMap = new HashMap<>();
-
+    public List<Candy> newList = new ArrayList<>();
     /**
      * Adds the candy to the list for the given ingredient
      * @param ingredient the ingredient whose list is changed
      * @param candy the candy to add to the list
      */
     public void add(String ingredient, Candy candy) {
-        List<Candy> newList = new ArrayList<>();
+       
         newList.add(candy);
         ingredientMap.put(ingredient, newList);
         
@@ -38,7 +38,16 @@ public class IngredientMap {
      * @return all candies that contain the ingredient.  Returns null if there 
      * are no candies with this ingredient.
      */
+    //shows me ingredient map is broken as 
+    //each hash map node for the ingredient as key 
+    //and value as array list containing 31 candies
+    //not just the candies that have this ingredient
+    //local variable newList Array list has the candies
+    // and ingredients
     public Collection<Candy> getCandyWith(String ingredient) {
+        //already broken when it arrives here
+        System.out.println(ingredientMap.get(ingredient));
+        //returns all
         return ingredientMap.get(ingredient);
         
     }
