@@ -35,6 +35,13 @@ public class Candy {
         return name;
     }
     
+     /**
+     * @return the candy's ingredients
+     */
+    public List<String> getIngredients() {
+        return ingredients;
+    }
+    
     /**
      * Calculates a score for the candy based upon how many of the ingredients 
      * passed in are in the candy.

@@ -106,7 +106,7 @@ public class CandyRecommender {
                 //two variables of candy being name and ingredients
                 for (String ingredient : ingredients) {
                     //not right
-                    System.out.println(ingredient);
+                    
                     ingredientMap.add(ingredient, candy);
                 }
             }
@@ -162,7 +162,6 @@ public class CandyRecommender {
         // just not working corrrectly
         for (String ingredient : likes) {
             //need to find ingredientMap asap this is the error
-            //need to access broken ingredientMap here
             possible.addAll(ingredientMap.getCandyWith(ingredient));
         }
         for (String ingredient : dislikes) {

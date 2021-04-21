@@ -51,12 +51,11 @@ public class CandyTest {
 	}
 
 	@Test
-	public void testCandy() throws Exception {
+	public void testCandyIngredMap() throws Exception {
 	/*
-* Purpose: This test checks to see if candy objects are being properly constructed
-* 
-* Method: candy constructor
-* Correct result: true if candy inserted ingredients into cnady object via constructor
+* Purpose: This test checks to see if candy ingrediedents are being placed in map
+* Method: getIngredientMap()
+* Correct result: true if candy inserted ingredients into candy ingred map 
 */
 	assertTrue(CandyRecommender.getIngredientMap() != null);
 	;
@@ -80,10 +79,10 @@ public class CandyTest {
 * Purpose: This test checks to see if score calculates
 * The constants are set to calcualte a scoe for a 
 * candy based on the liked ingredients
-* Method: score(int)
+* Method: score(int) 
 * Correct result:   0-10
 */
-	assertTrue( CandyRecommender.getLikes().size() < 11);
+	assertTrue( CandyRecommender.getLikes().size() < 11) ;
 	}
 
 }
