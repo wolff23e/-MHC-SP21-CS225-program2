@@ -68,7 +68,12 @@ public class CandyRecommender {
         dislikes = newDislikes;
     }
 
-
+  /**
+     * @return dislikes
+     */
+    public static List<String> getDislikes(){
+        return dislikes;
+    }
     /**
      * resets the global variables in CandyRecommender
      */
@@ -161,12 +166,12 @@ public class CandyRecommender {
         //fruit samd with coco not etc
         // just not working corrrectly
         for (String ingredient : likes) {
+            for(Candy c : ingredientMap.getCandyWith(ingredient)){
             //need to find ingredientMap asap this is the error
-            possible.addAll(ingredientMap.getCandyWith(ingredient));
+                possible.addAll(ingredientMap.getCandyWith(ingredient));
+            }
         }
         for (String ingredient : dislikes) {
-            // is removing all items immediately, not by ingredient
-            System.out.println(ingredientMap.getCandyWith(ingredient));
             possible.removeAll(ingredientMap.getCandyWith(ingredient));
         }
         return possible;

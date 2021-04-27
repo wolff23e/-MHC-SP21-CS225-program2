@@ -2,6 +2,8 @@ package candy;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,11 +18,12 @@ import org.junit.jupiter.api.BeforeEach;
 class CandyRecommenderTest {
     
 
-    private List<String> likes1 = new ArrayList<String>();//stays empty
-    private List<String> likes2 = new ArrayList<String>();
-    private List<String> likes3 = new ArrayList<String>();
-    private List<String> dislikes1 = new ArrayList<String>();//stays empty
-    private List<String> dislikes3 = new ArrayList<String>();
+    private ArrayList<String> likes1 = new ArrayList<String>();//stays empty
+    private ArrayList<String> likes2 = new ArrayList<String>();
+    private ArrayList<String> likes3 = new ArrayList<String>();
+    private ArrayList<String> dislikes1 = new ArrayList<String>();//stays empty
+    private ArrayList<String> dislikes3 = new ArrayList<String>();
+//	private ArrayList dislikes1 = new ArrayList<String>(Arrays.asList("PEANUT BUTTER","COCONUT"));
 
 
     //This is for Our Candy.txt file w/ 20 candys, for default txt file, should be...
@@ -34,6 +37,7 @@ class CandyRecommenderTest {
          * Reads "Candy.txt", or given input file, and fills ingredientMap
          * adds ingredients to certain sample likes and dislikes List<String>
          */
+
 
         try {
         CandyRecommender.readCandyFile("/Users/emmawolff/Documents/college/senior/software design and dev/homework2su/program2-candyrecommender-wolff23e/program2-candyrecommender-wolff23e/Candy.txt");
@@ -162,16 +166,10 @@ class CandyRecommenderTest {
          * Correct result: possible should contain 12 candies, 11 using default Candy.txt
          */
         Set<Candy> possible = new HashSet<Candy>();
-        CandyRecommender.setLikes(likes2);
+        CandyRecommender.setLikes(likes3);
         CandyRecommender.setDislikes(dislikes3);
-        System.out.println(likes2) ;  
-        //  
-        System.out.println( dislikes3) ;  
-      // possible is being wiped cleaned by remove all, even if not valid
-        // when possible calls findLikedCandies it is given broken return
         possible = CandyRecommender.findLikedCandies();
-        System.out.println(possible);
-        System.out.println(possible.size());
+        System.out.println(CandyRecommender.getDislikes());
         assertTrue(possible.size() == 12);
     }
 
